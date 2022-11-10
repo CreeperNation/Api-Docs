@@ -1,0 +1,8 @@
+@font-face {
+    font-family: MinecraftFont;
+    src: url(http://syszee.me/assets/fonts/Minecraft.ttf);
+}
+
+#minecraft_font {
+    font-family: MinecraftFont;
+}

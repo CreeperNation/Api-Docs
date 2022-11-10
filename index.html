@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="CreeperNation SkinAPI Documentation">
+    <meta name="keywords" content="creeperz653,creepernation,creeper,minecraft,nation,skin api,skinapi,creepernation skinapi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CreeperNation SkinAPI Documentation</title>
+    <link rel="icon" href="assets/img/logo.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link href="http://fonts.cdnfonts.com/css/minecraft-2" rel="stylesheet">
+    <link id="bootstrap_theme" rel="stylesheet" href="assets/css/theme-1-bootstrap.css">
+    <link rel="stylesheet" href="assets/css/vendor.css">
+    <link id="theme" rel="stylesheet" href="assets/css/theme-1.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script src="assets/js/modernizr.js"></script>
+
+    <meta content="CreeperNation SkinAPI Documentation" property="og:title" />
+    <meta content="CreeperNation SkinAPI is about merging both java skin api and floodgate skin api. This API provides ability to redirect to mc-heads url to either java or floodgate api, depending on your need, this allows bedrock skins to show up on your servers!" property="og:description" />
+    <meta content="https://api-docs.creepernation.xyz/" property="og:url" />
+    <meta content="https://api-docs.creepernation.xyz/assets/img/logo.png" property="og:image" />
+    <meta content="#27ce40" data-react-helmet="true" name="theme-color" />
+</head>
+
+<body>
+    <div class="site">
+        <div id="site_loader" class="site-loader">
+            <div class="spinner"><span class="bounce"></span><span class="bounce"></span><span class="bounce"></span></div>
+        </div>
+        <!-- .site-loader-->
+        <div class="site-canvas">
+            <div id="site_header" class="site-header">
+                <nav id="site_header_navbar" class="site-header-navbar navbar navbar-fixed-top navbar-lg navbar-bg-from-transparent navbar-fg-from-light navbar-dark">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" data-toggle="collapse" data-target="#site_header_navbar_collapse" class="navbar-toggle collapsed"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#"
+                                class="navbar-brand navbar-brand-has-media"><span class="navbar-brand-elem-wrap"><span class="text">Brand</span><img src="assets/img/logo.png" alt="" class="navbar-brand-media-img navbar-brand-media-img-dark"><img src="assets/img/logo.png" alt="" class="navbar-brand-media-img navbar-brand-media-img-light"></span></a>
+                        </div>
+                        <div id="site_header_navbar_collapse" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a href="https://github.com/CreeperNation/SkinAPI-Docs" target="_blank"><span class="navbar-nav-elem-wrap"><span class="text">Github</span></span></a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse-->
+                    </div>
+                    <!-- /.container-fluid-->
+                </nav>
+                <!-- .navbar-->
+            </div>
+            <!-- .site-header-->
+            <div id="site_content" class="site-content">
+                <div id="page_intro_section" class="align section section-md bg-stone">
+                    <div class="align section section-md bg-dark">
+                        <div class="text-center">
+                                <div class="fadeInUpShort text-left text-sm-inherit">
+                                    <div class="widget-wrap">
+                                        <h1 class="primary-text-light text-center">Creepernation - <b style="color: #27ce40;">SkinAPI Documentation</b></h1>
+                                        <p class="primary-text-light section2 section2-md text-center bg-dark">CreeperNation SkinAPI is about merging both java skin api and floodgate skin api. This API provides ability to redirect to mc-heads url to either java or floodgate api, depending on your need, this allows bedrock skins to show up on your servers!</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="align section section-md bg-dark">
+                        <div class="text-center">
+                                <div class="fadeInUpShort text-left text-sm-inherit">
+                                    <div class="widget-wrap">
+                                        <h1 class="primary-text-light text-center">Basic Usage</h1>
+                                        <h2 class="border center-block"></h2>
+                                        <p class="primary-text-light text-h3 section2 section2-md text-center bg-dark">The CreeperNation API has 5 main parts of any endpoint.</p>
+                                        <br>
+                                        <p class="primary-text-light text-h3 section2 section2-md text-center bg-dark">Size</p>
+                                        <p class="primary-text-light section2 section2-md text-center bg-dark">the size of the image to redirect, default is <code>150</code>, you can add it to any endpoint using query parameter <code>size</code> (<code>?size=&ltsize&gt</code> at the end of the url)</p>
+                                        <p class="primary-text-light text-h3 section2 section2-md text-center bg-dark">Type</p>
+                                        <p class="primary-text-light section2 section2-md text-center bg-dark">Type of avatar to redirect, Possible options are <code>avatar</code>, <code>head</code>, <code>body</code>, <code>player</code>, <code>raw</code> and <code>combo</code>. Default is <code>avatar</code>. You can see how they look <a href="#skin-examples" data-smooth-scroll="true">here</a> <code>/skin/:identifier?type=&lttype&gt</code> or like this: <code>/&lttype&gt/:identifier</code></p>
+                                        <p class="primary-text-light text-h3 section2 section2-md text-center bg-dark">Identifier</p>
+                                        <p class="primary-text-light section2 section2-md text-center bg-dark">The key of the player, this can be a UUID (the api will detect floodgate ones), or a username.</p>
+                                        <p class="primary-text-light text-h3 section2 section2-md text-center bg-dark">Prefix</p>
+                                        <p class="primary-text-light section2 section2-md text-center bg-dark">This is your floodgate prefix (<code>.</code> by default), if you want to use usernames the api will detect floodgate players if they begin with the prefix, you can add it using <code>?prefix=&ltprefix&gt</code> or if you use other query parameters <code>&prefix=&ltprefix&gt</code>.</p>
+                                        <p class="primary-text-light text-h3 section2 section2-md text-center bg-dark">Bedrock</p>
+                                        <p class="primary-text-light section2 section2-md text-center bg-dark">Only do this when the player's name is 100% a floodgate username, you can add this using <code>/bedrock</code> right after the identifier. This will make the api ignore everything and assume this is a bedrock player.</p>
+                                        <p class="primary-text-light text-h3 section2 section2-md text-center bg-dark">Download</p>
+                                        <p class="primary-text-light section2 section2-md text-center bg-dark">Downloads the skin (when loaded in a browser), only works when you use the <code>raw</code> type, and you can add it to your query parameters: <code>?download=true</code>.</p>
+                                        <br>
+                                    <div id="skin-examples">
+                                        <div class="flexible-widgets row">
+                                        <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                                            <div class="widget-wrap">
+                                                <div class="textwidget">
+                                                    <div class="card pricing-table-card card-dark">
+                                                        <div class="card-media"><img src="https://api.creepernation.xyz/avatar/creeperz653" alt="" width="154" class="img" draggable="false"></div>
+                                                        <div class="card-title">
+                                                            <div class="card-text"><span class="text-h2">Avatar</span><span class="price"></span></div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                                            <div class="widget-wrap">
+                                                <div class="textwidget">
+                                                    <div class="card pricing-table-card card-dark">
+                                                        <div class="card-media"><img src="https://api.creepernation.xyz/head/creeperz653" alt="" width="145" class="img" draggable="false"></div>
+                                                        <div class="card-title">
+                                                            <div class="card-text"><span class="text-h2">Head</span><span class="price"></span></div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                                            <div class="widget-wrap">
+                                                <div class="textwidget">
+                                                    <div class="card pricing-table-card card-dark">
+                                                        <div class="card-media"><img src="https://api.creepernation.xyz/body/creeperz653" alt="" width="64" class="img" draggable="false"></div>
+                                                        <div class="card-title">
+                                                            <div class="card-text"><span class="text-h2">Body</span><span class="price"></span></div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+
+                                    <div id="skin-examples">
+                                        <div class="flexible-widgets row">
+                                        <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                                            <div class="widget-wrap">
+                                                <div class="textwidget">
+                                                    <div class="card pricing-table-card card-dark">
+                                                        <div class="card-media"><img src="https://api.creepernation.xyz/player/creeperz653" alt="" width="77" class="img" draggable="false"></div>
+                                                        <div class="card-title">
+                                                            <div class="card-text"><span class="text-h2">Player</span><span class="price"></span></div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                                            <div class="widget-wrap">
+                                                <div class="textwidget">
+                                                    <div class="card pricing-table-card card-dark">
+                                                        <div class="card-media"><img src="https://api.creepernation.xyz/combo/creeperz653" alt="" width="154" class="img" draggable="false"></div>
+                                                        <div class="card-title">
+                                                            <div class="card-text"><span class="text-h2">Combo</span><span class="price"></span></div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-wow-delay="100ms" class="widget-section widget widget_text col-sm-6 col-md-4 mb-gg wow fadeInUpShort">
+                                            <div class="widget-wrap">
+                                                <div class="textwidget">
+                                                    <div class="card pricing-table-card card-dark">
+                                                        <div class="card-media"><img src="https://api.creepernation.xyz/raw/creeperz653" alt="" width="154" class="img" draggable="false"></div>
+                                                        <div class="card-title">
+                                                            <div class="card-text"><span class="text-h2">Body</span><span class="price"></span></div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="align section section-md bg-dark">
+                        <div class="text-center">
+                                <div class="fadeInUpShort text-left text-sm-inherit">
+                                    <div class="widget-wrap">
+                                    
+                                        <h1 class="primary-text-light text-center">Plugin Configuration</h1>
+                                        <h2 class="border center-block"></h2>
+                                        <p class="primary-text-light section2 section2-md text-center bg-dark">Don't forget to replace <code><b style="color: #c80021;">&ltTYPE&gt</b></code>
+
+                                                <div class="container">
+                                                        <div data-wow-delay="100ms" class="widget-section widget widget_text fadeInUpShort">
+                                                            <div class="widget-wrap">
+                                                                <div class="textwidget">
+                                                                    <div id="accordion_1" class="expansion-panel-group expansion-panel-group-dark">
+                                                                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_1" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title primary-text-light">DiscordSRV</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"></span></span></span></a>
+                                                                            <div id="collapse_1" class="accordion-body collapse">
+                                                                                <div class="expansion-panel-body">
+                                                                                    <p class="primary-text-light text-center">In your config.yml, scroll down to <code>AvatarUrl</code>, set it to this:</p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #6690dd;">AvatarUrl</b>: <b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">&ltTYPE&gt</b><b style="color: #2ea56a;">/{uuid}</b></code></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_2" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title primary-text-light">DiscordSRVUtils</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"></span></span></a>
+                                                                            <div id="collapse_2" class="accordion-body collapse">
+                                                                                <div class="expansion-panel-body">
+                                                                                    <p class="primary-text-light text-center">There are multiple message files containing avatar urls. At the time of writing this they are: <br><code>level.json</code>, <code>afk.json</code>, <code>no-longer-afk.json</code></p>
+                                                                                    <br>
+                                                                                    <p class="primary-text-light text-h3 text-center "><b style="color: #27ce40;">Level.json</b></p>
+                                                                                    <p class="primary-text-light text-center ">replace the avatar url (in thumbnail url)</p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">&ltTYPE&gt</b><b style="color: #2ea56a;">/[stats.uuid]</b></code></p>
+                                                                                    <br>
+                                                                                    <p class="primary-text-light text-h3 text-center "><b style="color: #27ce40;">Afk.json</b></p>
+                                                                                    <p class="primary-text-light text-center ">replace the avatar url (in author icon url)</p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">&ltTYPE&gt</b><b style="color: #2ea56a;">/[player.uuid]</b> </code></p>
+                                                                                    <br>
+                                                                                    <p class="primary-text-light text-h3 text-center "><b style="color: #27ce40;">No-Longer-Afk.json</b></p>
+                                                                                    <p class="primary-text-light text-center ">replace the avatar url (in author icon url)</p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">&ltTYPE&gt</b><b style="color: #2ea56a;">/[player.uuid]</b></code></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+                
+                
+            <!-- .site-content-->
+            <div id="site_footer">
+                <div id="site_footer_info" class="site-footer-info section section-sm text-center bg-dark">
+                    <div class="container">
+                        <nav class="site-footer-social-nav mb-lg">
+                            <ul class="site-footer-social-menu list-inline ml-0">
+                                <li data-wow-delay="200ms" class="menu-item px-md wow fadeInUpShort"><a href="https://discord.gg/gfUcfMdQW4" target="_blank" class="primary-text-light"><span>Discord</span></a></li>
+                            </ul>
+                        </nav>
+                        <div data-wow-delay="600ms" class="site-footer-copyright secondary-text-light wow fadeInUpShort">Copyright © 2022 CreeperNation</div>
+                    </div>
+                </div>
+                <!-- .section-->
+            </div>
+            <!-- .site-footer-->
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/demo.js"></script>
+</body>
+
+</html>

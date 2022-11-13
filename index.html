@@ -57,7 +57,7 @@
                                 <div class="fadeInUpShort text-left text-sm-inherit">
                                     <div class="widget-wrap">
                                         <h1 class="primary-text-light text-center">Creepernation - <b style="color: #27ce40;">SkinAPI Documentation</b></h1>
-                                        <p class="primary-text-light section text-center">CreeperNation SkinAPI is about merging both java skin api and floodgate skin api. This API provides ability to redirect to mc-heads url to either java or floodgate api, depending on your need, this allows bedrock skins to show up on your servers!</p>
+                                        <p class="primary-text-light section text-center">CreeperNation SkinAPI supports both Java and Bedrock skins. This API provides the ability to redirect the mc-heads URL to either Java or Bedrock, depending on your needs.</p>
                                     </div>
                                 </div>
                         </div>
@@ -71,18 +71,20 @@
                                         <h2 class="border center-block"></h2>
                                         <p class="primary-text-light text-h3 section text-center">The CreeperNation API has 5 main parts of any endpoint.</p>
                                         <br>
-                                        <p class="primary-text-light text-h3 section text-center">Size</p>
-                                        <p class="primary-text-light section text-center">the size of the image to redirect, default is <code>150</code>, you can add it to any endpoint using query parameter <code>size</code> (<code>?size=&ltsize&gt</code> at the end of the url)</p>
                                         <p class="primary-text-light text-h3 section text-center">Type</p>
-                                        <p class="primary-text-light section text-center">Type of avatar to redirect, Possible options are <code>avatar</code>, <code>head</code>, <code>body</code>, <code>player</code>, <code>raw</code> and <code>combo</code>. Default is <code>avatar</code>. You can see how they look <a href="#skin-examples" data-smooth-scroll="true">here</a> <code>/skin/:identifier?type=&lttype&gt</code> or like this: <code>/&lttype&gt/:identifier</code></p>
+                                        <p class="primary-text-light section text-center">Type of avatar to redirect, Possible options are <code>avatar</code>, <code>head</code>, <code>body</code>, <code>player</code>, <code>raw</code>, and <code>combo</code>. Default is <code>avatar</code>. You can see how they look <a href="#skin-examples" data-smooth-scroll="true">here</a> <code>/skin/:identifier?type=&lttype&gt</code> or like this: <code>/&lttype&gt/:identifier</code></p>
                                         <p class="primary-text-light text-h3 section text-center">Identifier</p>
-                                        <p class="primary-text-light section text-center">The key of the player, this can be a UUID (the api will detect floodgate ones), or a username.</p>
+                                        <p class="primary-text-light section text-center">The key of the player, this can be a UUID (the API will detect floodgate ones) or a username.</p>
+                                        <p class="primary-text-light text-h3 section text-center">Size</p>
+                                        <p class="primary-text-light section text-center">The size of the image to redirect, default is <code>150</code>, you can add it to any endpoint using query parameter <code>size</code> (<code>?size=&ltsize&gt</code> at the end of the url).</p>
+                                        <p class="primary-text-light text-h3 section text-center">Direction</p>
+                                        <p class="primary-text-light section text-center">Flips the body and head, default is <code>right</code>, you can add it to any endpoint using query parameter <code>direction</code> (<code>?direction=&ltleft/right&gt</code> at the end of the url).</p>
+                                        <p class="primary-text-light text-h3 section text-center">Download</p>
+                                        <p class="primary-text-light section text-center">Downloads the skin (when loaded in a browser), only works when you use the <code>raw</code> type, and you can add it to your query parameters: <code>?download=true</code>.</p>
                                         <p class="primary-text-light text-h3 section text-center">Prefix</p>
                                         <p class="primary-text-light section text-center">This is your floodgate prefix (<code>.</code> by default), if you want to use usernames the api will detect floodgate players if they begin with the prefix, you can add it using <code>?prefix=&ltprefix&gt</code> or if you use other query parameters <code>&prefix=&ltprefix&gt</code>.</p>
                                         <p class="primary-text-light text-h3 section text-center">Bedrock</p>
-                                        <p class="primary-text-light section text-center">Only do this when the player's name is 100% a floodgate username, you can add this using <code>/bedrock</code> right after the identifier. This will make the api ignore everything and assume this is a bedrock player.</p>
-                                        <p class="primary-text-light text-h3 section text-center">Download</p>
-                                        <p class="primary-text-light section text-center">Downloads the skin (when loaded in a browser), only works when you use the <code>raw</code> type, and you can add it to your query parameters: <code>?download=true</code>.</p>
+                                        <p class="primary-text-light section text-center">Only do this when the player's name is 100% a floodgate username, you can add this using <code>/bedrock</code> right after the identifier. This will make the API ignore everything and assume this is a bedrock player.</p>
                                         <br>
                                     <div id="skin-examples">
                                         <div class="flexible-widgets row">
@@ -186,7 +188,7 @@
                                     
                                         <h1 class="primary-text-light text-center">Plugin Configuration</h1>
                                         <h2 class="border center-block"></h2>
-                                        <p class="primary-text-light section text-center">Don't forget to replace <code><b style="color: #c80021;">&ltTYPE&gt</b></code>
+                                        <p class="primary-text-light section text-center">Don't forget you can replace the text in red with any <code><b style="color: #c80021;",  href="#skin-examples" data-smooth-scroll="true">&ltTYPE&gt</b></code>
 
                                                 <div class="container">
                                                         <div data-wow-delay="100ms" class="widget-section widget widget_text fadeInUpShort">
@@ -197,26 +199,58 @@
                                                                             <div id="collapse_1" class="accordion-body collapse">
                                                                                 <div class="expansion-panel-body">
                                                                                     <p class="primary-text-light text-center">In your config.yml, scroll down to <code>AvatarUrl</code>, set it to this:</p>
-                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #6690dd;">AvatarUrl</b>: <b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">&ltTYPE&gt</b><b style="color: #2ea56a;">/{uuid}</b></code></p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #6690dd;">AvatarUrl</b>: <b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">avatar</b><b style="color: #2ea56a;">/{uuid}</b></code></p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_2" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title primary-text-light">DiscordSRVUtils</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"></span></span></a>
                                                                             <div id="collapse_2" class="accordion-body collapse">
                                                                                 <div class="expansion-panel-body">
-                                                                                    <p class="primary-text-light text-center">There are multiple message files containing avatar urls. At the time of writing this they are: <br><code>level.json</code>, <code>afk.json</code>, <code>no-longer-afk.json</code></p>
+                                                                                    <p class="primary-text-light text-center">There are multiple message files containing avatar URLs. At the time of writing this, they are: <br><code>level.json</code>, <code>afk.json</code>, <code>no-longer-afk.json</code></p>
                                                                                     <br>
                                                                                     <p class="primary-text-light text-h3 text-center "><b style="color: #27ce40;">Level.json</b></p>
                                                                                     <p class="primary-text-light text-center ">replace the avatar url (in thumbnail url)</p>
-                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">&ltTYPE&gt</b><b style="color: #2ea56a;">/[stats.uuid]</b></code></p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">avatar</b><b style="color: #2ea56a;">/[stats.uuid]</b></code></p>
                                                                                     <br>
                                                                                     <p class="primary-text-light text-h3 text-center "><b style="color: #27ce40;">Afk.json</b></p>
                                                                                     <p class="primary-text-light text-center ">replace the avatar url (in author icon url)</p>
-                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">&ltTYPE&gt</b><b style="color: #2ea56a;">/[player.uuid]</b> </code></p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">avatar</b><b style="color: #2ea56a;">/[player.uuid]</b> </code></p>
                                                                                     <br>
                                                                                     <p class="primary-text-light text-h3 text-center "><b style="color: #27ce40;">No-Longer-Afk.json</b></p>
                                                                                     <p class="primary-text-light text-center ">replace the avatar url (in author icon url)</p>
-                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">&ltTYPE&gt</b><b style="color: #2ea56a;">/[player.uuid]</b></code></p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">avatar</b><b style="color: #2ea56a;">/[player.uuid]</b></code></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_3" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title primary-text-light">UltraStaffChatPro</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"></span></span></a>
+                                                                            <div id="collapse_3" class="accordion-body collapse">
+                                                                                <div class="expansion-panel-body">
+                                                                                    <p class="primary-text-light text-center">In Messages.yml/Config.yml, there are multiple crafatar links replace each one with:</p>
+                                                                                    <p><code class="text-h3 text-center breaking"> <b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">avatar</b><b style="color: #2ea56a;">/{uuid}</b></code></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_4" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title primary-text-light">Pl3xMap</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"></span></span></a>
+                                                                            <div id="collapse_4" class="accordion-body collapse">
+                                                                                <div class="expansion-panel-body">
+                                                                                    <p class="primary-text-light text-center">In your config.yml, scroll down to <code>heads-url</code>, set it to this:</p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #6690dd;">heads-url</b>: <b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">head</b><b style="color: #2ea56a;">/{uuid}</b></code></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_5" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title primary-text-light">Dynmap</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"></span></span></a>
+                                                                            <div id="collapse_5" class="accordion-body collapse">
+                                                                                <div class="expansion-panel-body">
+                                                                                    <p class="primary-text-light text-center">In your configuration.txt, scroll down to <code>skin-url</code> and set it to this:</p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #6690dd;">skin-url</b>: <b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">raw</b><b style="color: #2ea56a;">/{uuid}</b></code></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="expansion-panel panel"><a data-toggle="collapse" data-parent="#accordion_1" href="#collapse_6" class="expansion-panel-header"><span class="expansion-panel-text"><span class="expansion-panel-text-elem-wrap"><span class="title primary-text-light">BlueMapFloodgate</span></span></span><span class="expansion-panel-cta"><span class="expansion-panel-cta-elem-wrap"></span></span></a>
+                                                                            <div id="collapse_6" class="accordion-body collapse">
+                                                                                <div class="expansion-panel-body">
+                                                                                    <p class="primary-text-light text-center">In your config.yml, scroll down to <code>customAPI</code>, and set it to this:</p>
+                                                                                    <p><code class="text-h3 text-center breaking"><b style="color: #6690dd;">customAPI</b>: <b style="color: #2ea56a;">https://api.creepernation.xyz/</b><b style="color: #c80021;">raw</b><b style="color: #2ea56a;">/{uuid}</b></code></p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

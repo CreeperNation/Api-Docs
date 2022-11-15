@@ -9046,3 +9046,15 @@ h6,
     width: 400px;
     margin-top: -19px
 }
+
+.purple-text {
+    color: #850cca;
+}
+
+.creeper-text {
+    color: #27ce40;
+}
+
+.bg-deepslate {
+    background-image: url('../img/background.png') !important
+}

@@ -2,4 +2,4 @@
 
 CreeperNations API Offical Documentation 
 
-Visit the website via: https://api-docs.creepernation.xyz/
+Visit the website via: https://api-docs.creepernation.net/

@@ -1437,6 +1437,24 @@ img {
 
 .img-responsive2 {
     display: block;
+    max-width: 35%;
+    height: auto
+}
+
+.img-responsive3 {
+    display: block;
+    max-width: 25%;
+    height: auto
+}
+
+.img-responsive4 {
+    display: block;
+    max-width: 75%;
+    height: auto
+}
+
+.img-responsive5 {
+    display: block;
     max-width: 15%;
     height: auto
 }

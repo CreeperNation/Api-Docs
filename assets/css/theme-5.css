@@ -176,8 +176,8 @@ h6:last-child {
 
 @media (min-width: 992px) {
     .btn {
-        -webkit-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out
+        -webkit-transition: all 0s ease-in-out;
+        transition: all 0s ease-in-out
     }
 }
 

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Minecraft2';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Minecraft2'), url('./minecrafter.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Minecraft-Ten2';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Minecraft-Ten2'), url('./minecraft-ten.woff') format('woff');
+}

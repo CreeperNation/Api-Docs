@@ -1,5 +1,11 @@
-# CreeperNation Api-Docs
+<img src="https://api-docs.creepernation.net/assets/img/Banner-Text.png" alt="Geyser" width="500"/>
 
-CreeperNations API Offical Documentation 
+# CreeperNation Documentation
 
-Visit the website via: https://api-docs.creepernation.net/
+This is the repository that contains the Documentation for the CreeperNation Skin API
+
+The Documentation can be accessed using [this link](https://api-docs.creepernation.net).
+
+## Contributing
+
+If you would like to contribute to the Documentation, Please [open a pull request](https://github.com/CreeperNation/Api-Docs/pulls).

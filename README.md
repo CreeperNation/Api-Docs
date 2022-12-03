@@ -1,6 +1,6 @@
 <img src="https://api-docs.creepernation.net/assets/img/Banner-Text.png" alt="Geyser" width="500"/>
 
-[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
+![MadeWithHtml](https://forthebadge.com/images/badges/uses-html.svg)
 
 [![Discord](https://img.shields.io/discord/784664122641350686.svg?color=%237289da&label=discord)](https://discord.creepernation.net)
 # CreeperNation Documentation

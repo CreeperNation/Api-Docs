@@ -1,4 +1,4 @@
-<img src="https://api-docs.creepernation.net/assets/img/Banner-Text.png" alt="Geyser" width="500"/>
+<img src="https://api-docs.creepernation.net/assets/img/Banner-Text.png" alt="CreeperNation" width="500"/>
 
 ![MadeWithHtml](https://forthebadge.com/images/badges/uses-html.svg)
 

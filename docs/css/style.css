@@ -1,0 +1,69 @@
+.bold {
+    font-weight: 500;
+}
+
+.better-footer {
+    border: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.logo {
+    max-width: 250px;
+    min-width: 150px;
+    display: inline-block;
+}
+
+
+.btn-plunar {
+    color: #fff;
+    background-image: url('btn/lunar-btn.png') !important;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    border-color: #000
+}
+
+
+
+.btn-plunar:hover {
+    color: #fff;
+    background-image: url('btn/lunar-btn-hover.png') !important;
+    border-color: #000
+}
+
+
+.btn-plunar:active,
+.btn-plunar.active,
+.open>.btn-plunar.dropdown-toggle {
+    color: #fff;
+    background-image: url('btn/lunar-btn-hover.png') !important;
+    border-color: #000
+}
+
+.btn-plunar:active:hover,
+.btn-plunar:active:focus,
+.btn-plunar:active.focus,
+.btn-plunar.active:hover,
+.btn-plunar.active:focus,
+.btn-plunar.active.focus,
+.open>.btn-plunar.dropdown-toggle:hover,
+.open>.btn-plunar.dropdown-toggle:focus,
+.open>.btn-plunar.dropdown-toggle.focus {
+    color: #fff;
+    background-image: url('btn/lunar-btn-hover.png') !important;
+    border-color: #000
+}
+
+.btn-plunar:active,
+.btn-plunar.active,
+.open>.btn-plunar.dropdown-toggle {
+    background-image: none
+}
+.btn-plunar.btn-wide {
+    min-width: 170px;
+    min-height: 50px
+}

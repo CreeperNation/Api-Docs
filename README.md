@@ -8,7 +8,7 @@
 
 This is the repository that contains the Documentation for the CreeperNation Skin API
 
-The Documentation can be accessed using [this link](https://api-docs.creepernation.net).
+The Documentation can be accessed using [this link](https://docs.creepernation.net/skinapi).
 
 ## Contributing
 

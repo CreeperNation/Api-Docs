@@ -9056,7 +9056,7 @@ h6,
 }
 
 .bg-deepslate {
-    background-image: url(/assets/img/background.png) !important
+    background-image: url('https://docs.creepernation.net/assets/img/background.png') !important
 }
 
 
